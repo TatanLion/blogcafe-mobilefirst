@@ -1,0 +1,268 @@
+html {
+    box-sizing: border-box; /*Para poder usar el padding sin afectar*/
+    font-size: 62.5%; /*Esto hara que 1rem sea 10px*/
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+} /**Lo anterior es la propiedad del box-sizing**/
+
+body{ /**Aqui definiremos la tipografia, el tamaño y un interlineado en todo el body**/
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.6rem;
+    line-height: 2;
+}
+
+/**Globales**/
+.contenedor{
+    max-width: 1200px; /*Tome el maximo ancho*/
+    margin: 0 auto; /*El margen sera de 0 y auto*/
+    width: 95%;
+}
+h1, h2, h3, h4{
+    font-family: 'PT Sans', sans-serif;
+}
+h1{
+    font-size: 4.8rem;
+}
+h2{
+    font-size: 4rem;
+    line-height: 1.2;
+}
+h3{
+    font-size: 3.2rem;
+}
+h4{
+    font-size: 2.8rem;
+}
+img{
+    max-width: 100%; /**Esto hace que las imagenes se adapaten al 100%**/
+}
+
+/**Utilidades**/
+.centrar-texto{
+    text-align: center; /*Usamos esta utilidad para centrar el texto*/
+}
+.no-margin{
+    margin: 0; /*Quitamos el margen que trae por defecto*/
+}
+
+/**Grid**/
+@media (min-width: 768px) {
+    .grid{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .centrar-columnas{
+        justify-content: center;
+    }
+    .columna-6{
+        flex: 0 0 calc(50% - 1rem);
+    }
+    .columnas-4{
+        flex: 0 0 calc(40% - 2rem);
+    }
+    .columnas-8{
+        flex: 0 0 calc(60% - 2rem);
+    }
+    .columnas-10{
+        flex: 0 0 calc(83.3% - 1rem);
+    }
+    .columnas-12{
+        flex: 0 0 100%;
+    }
+}
+/**Botones**/
+.btn{
+    display: block; /*Hacemos que ocupe todo el acnho del elemento*/
+    text-align: center; /*Alineamos los elementos*/
+    padding: 1rem 3rem; /*Damos un espacio de 1 px arriba y 3 al lado del boton*/
+    margin: 2rem 0; /*Damos un margen de 20 pixeles arriba y abajo y 0 a los lados*/
+    color: #ffffff; /*Le damos un color blanco a letra*/
+    text-decoration: none; /*Quitamos la linea que tienen los enlaces*/
+    font-family: 'PT Sans', sans-serif; /*Colocamos la fuente descargada en google fonts*/
+    font-weight: 700; /*Damos un ancho de 700*/
+    font-size: 2rem; /*Hacemos que la letra sea mas grande*/
+    text-transform: uppercase; /*Colocamos todas las letras en mayusculas*/
+    flex: 0 0 100%;
+}
+.btn:hover{
+    cursor: pointer;
+}
+@media (min-width: 768px) { /*Tamaño celular*/
+    .btn{
+        display: inline-block; /*Cuando el tamaño sea menos a 480 los botones sean mas pequeños*/
+        flex: 0 0 auto;
+    }
+}
+.btn-primario{
+    background-color: #000000; /*Damos un color negro*/
+}
+.btn-secundario{
+    background-color: #784d3c; /*Damos un color cafe*/
+}
+
+/**Header**/
+@media (min-width:768px){ /*En el tamaño de la tablet ajustamos estos*/
+    .barra{
+        display: flex; /*Ajustamos los elementos horizontalmente*/
+        justify-content: space-between; /*Damos un espacio entre los elementos a la derecha e izquiera*/
+        align-items: center; /*Alenamos los elementos*/
+    }
+}
+.site-header{
+    background-image: url(../img/banner.jpg); /*Colocamos la imagen de fondo*/
+    background-position: center center; /*Centramos la imagen de ambos extremos*/
+    background-repeat: no-repeat; /*Hacemos que no se repita la imagen*/
+    background-size: cover; /*Rellenamos la imagen*/
+    height: 60rem; /*Le damos un alto de 600pixeles*/
+}
+.site-header a {
+    color: #ffffff; /*Le damos un color a la letra*/
+    text-decoration: none; /*Quitamos la linea de abajo*/
+}
+.site-header h1{
+    text-align: center; /*Centramos los enlaces*/
+    font-weight: 400; /*Le damos un ancho a la letra bajo*/
+}
+.site-header span{
+    font-weight: 700; /*Le damos mas ancho para que se vea mas bonito*/
+}
+
+/**Navegacion**/
+.navegacion a{
+    text-align: center; /*Alineamos el contenido en el centro*/
+    display: block; /*Hacemos que ocupe todo el campo horizontalmente con esta propiedad*/
+    font-size: 1.8rem; /*El tamaño de la letra por defecto es 16 pixeles asi que lo colocamos mas grande*/
+    color: #ffffff;
+    text-decoration: none;
+}
+@media (min-width: 768px) { /*Tamaño de la tablet*/
+    .navegacion a{
+        display: inline; /* colocamos los elementos en linea*/
+        margin-right: 2rem; /*Margen a la derecha con un espacio de 20 pixeles*/
+    }
+    .navegacion a:last-of-type{ /*Con esto aplicamos las configuraciones al ultimo elemento*/
+        margin: 0; /*Le damos un margen de 0*/
+    }
+}
+/**Texto Header**/
+@media (min-width: 768px) { /*Tamaño de la tablet*/
+    .texto-header{ 
+        margin-top: 15rem; /*Cuando sea menor de los 768px tendra un margen de arriba de 15 px*/
+    }
+}
+.texto-header{
+    color: #ffffff; /*Le damos color al texto*/
+    margin-top: 15rem; /* le damos un espacio entre el menu a este contenido*/
+    text-align: center; /*Centramos el contenido*/
+}
+.texto-header p{
+   font-size: 1.8rem;/*Le damos un tamaña a la letra del parrafo*/
+}
+
+/**Contenido Principal HOME**/
+.contenido-principal{
+    display: flex; /*Posicionamos uno al lado del otro*/
+    flex-wrap: wrap; /*Hacemos que ocupe el 100% y no coloque una barra lateral*/
+}
+.blog, 
+.cursos {
+    flex: 0 0 100%; /*Con esta propiedad damos un espacio del 100% que lo tome el orden es grow, shrink y basis*/
+}
+.cursos{
+    order: -1; /*Ya que tenemos flex podemos indicarle que la posicion sera primero con el -1*/
+}
+@media (min-width: 768px) {
+    .contenido-principal{
+        justify-content: space-between; /*Ya que tenemod definico el display flex solo debemos mover los elementos*/
+    }
+    .blog{
+        flex-basis: 66.6%; /*En la parte de arriba tenemos el 100% asi que debemos darle una proporcion para la tablet*/
+        /*El blog como es mas grande se le coloca un valor de 66%*/
+    }
+    .cursos{
+        flex-basis: calc(33.3% - 4rem); /*Le damos un valor menor la diferencia del 66% de arriba*/
+        /*El menos 4rem se coloca para que se reste del porcentaje el valor dado para un espacio entre ellos*/
+        order: 2; /*Lo ubicamos a la derecha*/    
+    }
+}
+/**Opcional**/
+.entrada-blog{
+    margin-bottom: 2rem; /*Damos un poco de separacion entre los articulos*/
+    border-bottom: 0.3rem solid #e1e1e1; /*Colocamos una linea con un color*/
+}
+.entrada-blog:last-of-type{
+    border: none; /*Quitamos el borde del ultimo elemento*/
+}
+/**Cursos Sidebar**/
+.cursos-lista{ 
+    padding: 0; /*Quitamos la separacion por defecto que coloca*/
+    list-style: none; /*Quitamos los puntos de las viñetas en la lista*/
+}
+.curso{
+    padding: 3rem; /*Espacio entre los cursos en la pagina cursos.html*/
+    padding-bottom: 3rem; /*Damos una separacion entre los dos cursos en la parte inferior*/
+    border-bottom: 1px solid #e1e1e1; /*Colocamos una linea con un color*/
+}
+.curso:last-of-type{
+    border: none;/*Quitamos el borde del ultimo elemento*/
+}
+.curso p{
+    font-family: 'PT Sans', sans-serif; /*Usamos la fuente descargada desde  el google fonts*/
+    font-weight: 700;/*Damos un ancho de 700*/ 
+    font-size: 2rem;/*Aumentamos el tamaño de la letra a un 20%*/
+}
+.curso p span,
+p.description{
+    font-weight: 400; /*A las palabras dentro de span damos un ancho de 400*/
+}
+
+/**Footer**/
+.site-footer{
+    background-color: #000000;
+    padding: 3rem;
+    margin-top: 4rem;
+}
+.site-footer p {
+    color: #ffffff;
+    font-size: 3rem;
+    font-weight: 400;
+    font-family: 'PT Sans', sans-serif;
+}
+.site-footer p span{
+    font-weight: 700;
+}
+
+/**Contacto**/
+.formulario-contacto{
+    background-color: #ffffff;
+    padding: 5rem;
+}
+@media (min-width: 768px) {
+    .formulario-contacto{
+        margin-top: -10rem;
+    }
+    
+}
+.formulario-contacto .campo{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+.formulario-contacto .campo label{
+    flex: 0 0 8rem;
+}
+.formulario-contacto .campo input:not([type="submit"]),
+.formulario-contacto textarea{
+    flex: 1;
+    border: 1px solid #e1e1e1;
+    padding: 1rem;
+}
+.formulario-contacto textarea{
+    height: 20rem;
+}
+.formulario-contacto .enviar{
+    display: flex;
+    justify-content: flex-end;
+}
